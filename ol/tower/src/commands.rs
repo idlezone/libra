@@ -55,7 +55,13 @@ impl Configurable<AppCfg> for MinerCmd {
         // instead, always return `Some(CONFIG_FILE)` here.
 
         let mut config_path = entrypoint::get_node_home();
+        println!("my address: {:?}", config_path);
+        let args = entrypoint::get_args();
+        let xff_folder = args.xff_folder.unwrap();
+        // let xff_folder = "vdf_proofs_D3101358BE81A590FF39B5127F637DC4/";
+        config_path.push(xff_folder);
         config_path.push(CONFIG_FILE);
+        println!("current path: {:?}", config_path);
 
         if config_path.exists() {
             println!("initializing miner from config file: {:?}", config_path);

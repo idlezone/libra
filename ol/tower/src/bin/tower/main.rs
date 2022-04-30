@@ -8,4 +8,5 @@ use tower::application::APPLICATION;
 /// Boot MinerApp
 fn main() {
     abscissa_core::boot(&APPLICATION);
+    
 }

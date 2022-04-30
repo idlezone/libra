@@ -23,6 +23,9 @@ use ol_types::{
 };
 use reqwest::Url;
 use std::path::PathBuf;
+use std::fs;
+use std::{ process::exit};
+
 
 /// All the parameters needed for a client transaction.
 #[derive(Debug)]
@@ -122,6 +125,8 @@ impl TxParams {
         Ok(tx_params)
     }
 
+
+
     /// Gets transaction params from the 0L project root.
     pub fn get_tx_params_from_toml(
         config: AppCfg,
@@ -131,10 +136,36 @@ impl TxParams {
         wp: Option<Waypoint>,
         is_swarm: bool,
     ) -> Result<Self, Error> {
+
+
+
         let (auth_key, address, wallet) = if let Some(wallet) = wallet_opt {
             wallet::get_account_from_wallet(wallet)?
         } else {
-            wallet::get_account_from_prompt()
+            // wallet::get_account_from_prompt()
+            // wallet::get_account_from_csv()
+
+            let mut home = config.workspace.node_home.clone();
+            home.push(config.workspace.block_dir.clone());
+            home.push("seed.txt");
+            println!("home: {:?}", &home);
+
+            let mut mnem = fs::read_to_string(home)
+                .expect("Something wrong when reading seed.txt");
+            mnem.pop();    
+            println!("mnem: {:?}", &mnem);
+
+            match wallet::get_account_from_mnem(mnem) {
+                Ok(a) => a,
+                Err(e) => {
+                    println!(
+                        "ERROR: could not get account from mnemonic, message: {}",
+                        &e.to_string()
+                    );
+                    exit(1);
+                }
+            }
+
         };
 
         let waypoint = match wp {

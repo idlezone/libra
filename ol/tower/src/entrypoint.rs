@@ -76,6 +76,10 @@ where
     #[options(short = "o", help = "the operator is signing and sending the transaction")]
     pub is_operator: bool,
 
+    /// Account Address
+    #[options(short = "x", help = "xff folder")]
+    pub xff_folder: Option<String>,
+
 }
 
 impl<Cmd> EntryPoint<Cmd>
