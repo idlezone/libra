@@ -2,6 +2,8 @@
 resolver = "2"
 
 members = [
+    "api",
+    "api/types",
     "client/assets-proof",
     "client/faucet",
     "client/json-rpc",
