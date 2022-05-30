@@ -9,6 +9,13 @@ use txs::tx_params::TxParams;
 use crate::{backlog, entrypoint};
 use crate::{entrypoint::EntryPointTxsCmd, prelude::*};
 
+use std::{fs::File};
+// use anyhow::{anyhow, Error, Result, bail};
+use ol_types::block::VDFProof;
+use std::io::BufReader;
+use txs::submit_tx::{eval_tx_status};
+use crate::commit_proof::commit_proof_tx;
+
 /// `backlog` subcommand
 #[derive(Command, Default, Debug, Options)]
 pub struct BacklogCmd {
@@ -18,6 +25,13 @@ pub struct BacklogCmd {
     help = "Submit backlogged transactions"
     )]
     submit: bool,
+
+    /// option for submit zero
+    #[options(
+        short = "z",
+        help = "Submit zero"
+        )]
+    submit_zero: bool,
 
     /// Submits the specified proof from the proof directory
     #[options(
@@ -102,6 +116,36 @@ impl Runnable for BacklogCmd {
                 }
             }
 
+            processed_commands = processed_commands + 1;
+        }
+
+        if self.submit_zero {
+            // let path =PathBuf::from(format!("proof_0.json");
+            // let file = File::open("proof_0.json").map_err(|e| Error::from(e))?;
+            let mut config_path = entrypoint::get_node_home();
+            println!("my path: {:?}", config_path);
+            let args = entrypoint::get_args();
+            let xff_folder = args.xff_folder.unwrap();
+            // let xff_folder = "vdf_proofs_D3101358BE81A590FF39B5127F637DC4/";
+            config_path.push(xff_folder);
+            config_path.push("proof_0.json");
+            println!("current path: {:?}", config_path);
+            let file = File::open(config_path).unwrap();
+            let reader = BufReader::new(file);
+            // let block: VDFProof =
+            //     serde_json::from_reader(reader).map_err(|e| Error::from(e))?;
+            let block: VDFProof = serde_json::from_reader(reader).unwrap();
+            let view = commit_proof_tx(&tx_params, block).unwrap();
+            match eval_tx_status(view) {
+                Ok(_) => {}
+                Err(e) => {
+                    warn!(
+                                "WARN: could not fetch proof_0 TX status, aborting. Message: {:?} ",
+                                e
+                            );
+                    // return Err(e)
+                }
+            };
             processed_commands = processed_commands + 1;
         }
 
