@@ -17,8 +17,8 @@ mirai-annotations = "1.10.1"
 sha2 = "0.9.3"
 smallvec = "1.6.1"
 
-diem-crypto = { path = "../../../crypto/crypto" }
-diem-workspace-hack = { path = "../../../common/workspace-hack" }
+diem-crypto = { path = "../../../crates/diem-crypto" }
+diem-workspace-hack = { path = "../../../crates/diem-workspace-hack" }
 move-core-types = { path = "../../move-core/types" }
 move-vm-types = { path = "../types" }
 move-binary-format = { path = "../../move-binary-format" }

@@ -17,12 +17,12 @@ rayon = "1.5.0"
 mirai-annotations = "1.10.1"
 
 bcs = "0.1.2"
-diem-crypto = { path = "../../crypto/crypto" }
-diem-logger = { path = "../../common/logger" }
-diem-metrics = { path = "../../common/metrics" }
+diem-crypto = { path = "../../crates/diem-crypto" }
+diem-logger = { path = "../../crates/diem-logger" }
+diem-metrics = { path = "../../crates/diem-metrics" }
 diem-state-view = { path = "../../storage/state-view" }
 diem-types = { path = "../../types" }
-diem-workspace-hack = { path = "../../common/workspace-hack" }
+diem-workspace-hack = { path = "../../crates/diem-workspace-hack" }
 move-core-types = { path = "../move-core/types" }
 move-vm-runtime = { path = "../move-vm/runtime" }
 move-vm-types = { path = "../move-vm/types" }
@@ -30,13 +30,13 @@ move-binary-format = { path = "../move-binary-format" }
 serde_json = "1.0.64"
 serde = { version = "1.0.124", default-features = false }
 
-diem-framework-releases = { path = "../diem-framework/releases"}
+framework-releases = { path = "../diem-framework/releases"}
 
 [dev-dependencies]
 proptest = "1.0.0"
 
 diem-types = { path = "../../types", features = ["fuzzing"] }
-diem-framework-releases = { path = "../diem-framework/releases" }
+framework-releases = { path = "../diem-framework/releases" }
 
 [features]
 default = []

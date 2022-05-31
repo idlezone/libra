@@ -14,7 +14,7 @@ publish = false
 [dependencies]
 docgen = { path = "../move-prover/docgen" }
 move-prover = { path = "../move-prover" }
-diem-workspace-hack = { path = "../../common/workspace-hack" }
+diem-workspace-hack = { path = "../../crates/diem-workspace-hack" }
 
 log = "0.4.14"
 walkdir = "2.3.1"

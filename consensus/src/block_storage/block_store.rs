@@ -229,12 +229,12 @@ impl BlockStore {
             committed_round = committed_round,
             block_id = block_to_commit.id(),
         );
-        event!("committed",
-            "block_id": block_to_commit.id().short_str(),
-            "epoch": block_to_commit.epoch(),
-            "round": committed_round,
-            "parent_id": block_to_commit.parent_id().short_str(),
-        );
+        // event!("committed",
+        //     "block_id": block_to_commit.id().short_str(),
+        //     "epoch": block_to_commit.epoch(),
+        //     "round": committed_round,
+        //     "parent_id": block_to_commit.parent_id().short_str(),
+        // );
         self.prune_tree(block_to_commit.id());
         Ok(())
     }

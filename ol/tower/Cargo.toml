@@ -19,14 +19,14 @@ hex = { version = "0.4.2", features = ["serde"] }
 byteorder = "1"
 glob = "0.3"
 serde_json = "1"
-diem-crypto = { path = "../../crypto/crypto" }
+diem-crypto = { path = "../../crates/diem-crypto" }
 diem-wallet = { path = "../../testsuite/cli/diem-wallet" }
 cli = { path = "../../testsuite/cli/" }
 diem-types = { path = "../../types/" }
 diem-config = { path = "../../config/" }
 diem-json-rpc-types = { path = "../../json-rpc/types"} 
 diemdb = { path = "../../storage/diemdb"}
-diem-logger = { path = "../../common/logger" }
+diem-logger = { path = "../../crates/diem-logger" }
 storage-interface= {path = "../../storage/storage-interface"}
 vm-genesis={path="../../language/tools/vm-genesis"}
 move-core-types={path="../../language/move-core/types"}

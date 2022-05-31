@@ -62,7 +62,7 @@ impl Compiler for IRCompiler {
 
 fn run_test(path: &Path) -> datatest_stable::Result<()> {
     testsuite::functional_tests(
-        IRCompiler::new(diem_framework_releases::current_modules().to_vec()),
+        IRCompiler::new(framework_releases::current_modules().to_vec()),
         path,
     )
 }

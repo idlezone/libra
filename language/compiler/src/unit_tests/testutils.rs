@@ -145,5 +145,5 @@ pub fn compile_script_string_with_stdlib(code: &str) -> Result<CompiledScript> {
 }
 
 fn stdlib() -> Vec<CompiledModule> {
-    diem_framework_releases::current_modules().to_vec()
+    framework_releases::current_modules().to_vec()
 }

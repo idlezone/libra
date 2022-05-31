@@ -7,7 +7,7 @@ use diem_crypto::{
     multi_ed25519::{MultiEd25519PrivateKey, MultiEd25519PublicKey},
     PrivateKey, SigningKey, Uniform,
 };
-use diem_framework_releases::legacy::transaction_scripts::LegacyStdlibScript;
+use framework_releases::legacy::transaction_scripts::LegacyStdlibScript;
 use diem_transaction_builder::{
     stdlib as transaction_builder, stdlib::encode_peer_to_peer_with_metadata_script,
 };

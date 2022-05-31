@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use diem_crypto::{ed25519::Ed25519PrivateKey, PrivateKey, Uniform};
-use diem_framework_releases::legacy::transaction_scripts::LegacyStdlibScript;
+use framework_releases::legacy::transaction_scripts::LegacyStdlibScript;
 use diem_transaction_builder::stdlib::*;
 use diem_types::{
     account_config::{self, BurnEvent, XUS_NAME},

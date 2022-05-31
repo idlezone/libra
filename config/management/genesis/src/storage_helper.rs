@@ -45,7 +45,7 @@ impl StorageHelper {
     //////// 0L ////////
     pub fn new_with_path(path: std::path::PathBuf) -> Self {
         std::fs::create_dir_all(&path).unwrap();
-        let path = diem_temppath::TempPath::new_with_dir(path);
+        let path = diem_temppath::TempPath::new_with_temp_dir(path);
         path.create_as_file().expect("Failed on create_as_file");
         File::create(path.path()).expect("Could not create file");
         Self { temppath: path }
@@ -53,7 +53,7 @@ impl StorageHelper {
 
     ///////// 0L /////////
     pub fn get_with_path(path: std::path::PathBuf) -> Self {
-        let path = diem_temppath::TempPath::new_with_dir(path);
+        let path = diem_temppath::TempPath::new_with_temp_dir(path);
         // path.create_as_file().expect("Failed on create_as_file");
         // File::create(path.path()).expect("Could not create file");
         Self { temppath: path }

@@ -33,16 +33,16 @@ bitvec = { path = "../common/bitvec", package = "diem-bitvec" }
 channel = { path = "../common/channel" }
 bcs = "0.1.2"
 diem-config = { path = "../config" }
-diem-crypto = { path = "../crypto/crypto" }
-diem-crypto-derive = { path = "../crypto/crypto-derive" }
-diem-infallible = { path = "../common/infallible" }
-diem-logger = { path = "../common/logger" }
-diem-metrics = { path = "../common/metrics" }
+diem-crypto = { path = "../crates/diem-crypto" }
+diem-crypto-derive = { path = "../crates/diem-crypto-derive" }
+diem-infallible = { path = "../crates/diem-infallible" }
+diem-logger = { path = "../crates/diem-logger" }
+diem-metrics = { path = "../crates/diem-metrics" }
 diem-proptest-helpers = { path = "../common/proptest-helpers", optional = true }
 diem-rate-limiter = { path = "../common/rate-limiter"}
 diem-time-service = { path = "../common/time-service", features = ["async"] }
 diem-types = { path = "../types" }
-diem-workspace-hack = { path = "../common/workspace-hack" }
+diem-workspace-hack = { path = "../crates/diem-workspace-hack" }
 memsocket = { path = "./memsocket", optional = true }
 netcore = { path = "./netcore" }
 num-variants = { path = "../common/num-variants" }

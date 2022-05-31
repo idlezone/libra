@@ -19,7 +19,7 @@ pub mod test_utils {
     use move_binary_format::{file_format::empty_module, CompiledModule};
 
     pub fn release_modules() -> Vec<(Vec<u8>, CompiledModule)> {
-        let mut modules: Vec<_> = diem_framework_releases::current_modules_with_blobs()
+        let mut modules: Vec<_> = framework_releases::current_modules_with_blobs()
             .into_iter()
             .map(|(bytes, modules)| (bytes.clone(), modules.clone()))
             .collect();

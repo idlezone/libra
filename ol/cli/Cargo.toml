@@ -49,7 +49,7 @@ url = { version = "^2.1", features = ["serde"]}
 diem-genesis-tool = { path = "../../config/management/genesis", version = "0.1.0" }
 diem-wallet = { path = "../../testsuite/cli/diem-wallet", version = "0.1.0" }
 diemdb = { path = "../../storage/diemdb", version = "0.1.0" }
-diem-temppath = { path = "../../common/temppath", version = "0.1.0" }
+diem-temppath = { path = "../../crates/diem-temppath", version = "0.1.0" }
 ol-keys = { path = "../../ol/keys/", version = "0.1.0" }
 abscissa_tokio = "0.5"
 regex = "1"
@@ -65,7 +65,7 @@ bcs = "0.1.2"
 move-vm-types = { path = "../../language/move-vm/types" } # 0L todo: which move-vm/ path?
 move-binary-format = { path = "../../language/move-binary-format" }
 dialoguer = "0.8.0"
-diem-crypto = { path = "../../crypto/crypto" }
+diem-crypto = { path = "../../crates/diem-crypto" }
 
 
 # Parity with Storage create

@@ -43,7 +43,7 @@ use move_vm_runtime::{
 };
 use move_vm_types::gas_schedule::{calculate_intrinsic_gas, GasStatus};
 use std::{convert::TryFrom, sync::Arc};
-use diem_framework_releases::import_stdlib;
+use framework_releases::import_stdlib;
 
 #[derive(Clone)]
 /// A wrapper to make VMRuntime standalone and thread safe.

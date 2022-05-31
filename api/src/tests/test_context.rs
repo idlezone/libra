@@ -54,7 +54,7 @@ pub fn new_test_context() -> TestContext {
     let mut rng = ::rand::rngs::StdRng::from_seed(rand::rngs::OsRng.gen());
     let builder = ValidatorBuilder::new(
         &tmp_dir,
-        diem_framework_releases::current_module_blobs().to_vec(),
+        framework_releases::current_module_blobs().to_vec(),
     )
     .publishing_option(VMPublishingOption::open());
 

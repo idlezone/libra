@@ -14,7 +14,7 @@ use diem_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey},
     PrivateKey, Uniform,
 };
-use diem_framework_releases::{
+use framework_releases::{
     current_module_blobs, legacy::transaction_scripts::LegacyStdlibScript,
 };
 use diem_transaction_builder::stdlib as transaction_builder;
@@ -908,7 +908,7 @@ pub enum GenesisOptions {
 /// Generate an artificial genesis `ChangeSet` for testing
 pub fn generate_genesis_change_set_for_testing(genesis_options: GenesisOptions) -> ChangeSet {
     let modules = match genesis_options {
-        GenesisOptions::Compiled => diem_framework_releases::current_module_blobs(),
+        GenesisOptions::Compiled => framework_releases::current_module_blobs(),
         GenesisOptions::Fresh => diem_framework::module_blobs(),
     };
 

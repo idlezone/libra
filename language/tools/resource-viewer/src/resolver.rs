@@ -31,7 +31,7 @@ impl<'a> Resolver<'a> {
     pub fn new(state: &'a dyn MoveStorage, use_stdlib: bool) -> Self {
         let cache = ModuleCache::new();
         if use_stdlib {
-            let modules = diem_framework_releases::current_modules();
+            let modules = framework_releases::current_modules();
             for module in modules {
                 cache.insert(module.self_id(), module.clone());
             }

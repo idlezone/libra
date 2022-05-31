@@ -26,11 +26,11 @@ wait-timeout = "0.2.0"
 classgroup = { path = "../../ol/verifiable_delay/classgroup", version = "^0.1.0" }
 cli = { path = "../../testsuite/cli/" }
 diem-config = { path = "../../config/" }
-diem-crypto = { path = "../../crypto/crypto" }
+diem-crypto = { path = "../../crates/diem-crypto" }
 diem-genesis-tool = { path = "../../config/management/genesis" }
 diem-global-constants = { path = "../../config/global-constants"}
 diem-json-rpc-types = { path = "../../json-rpc/types" } 
-diem-logger = { path = "../../common/logger" }
+diem-logger = { path = "../../crates/diem-logger" }
 diem-management = { path = "../../config/management" }
 diem-secure-storage = { path = "../../secure/storage" }
 diem-types = { path = "../../types/" }

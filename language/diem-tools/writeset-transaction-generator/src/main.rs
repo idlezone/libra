@@ -130,7 +130,7 @@ fn save_bytes(bytes: Vec<u8>, path: PathBuf) -> Result<()> {
 fn diem_framework_modules(release_name: &str) -> Vec<(Vec<u8>, CompiledModule)> {
     // Need to filter out Genesis module similiar to what is done in vmgenesis to make sure Genesis
     // module isn't published on-chain.
-    diem_framework_releases::load_modules_from_release(release_name)
+    framework_releases::load_modules_from_release(release_name)
         .unwrap_or_else(|_| {
             panic!(
                 "Failed to load modules from given release name: {:?}",

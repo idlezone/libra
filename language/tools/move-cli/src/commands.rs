@@ -591,7 +591,7 @@ fn explain_execution_error(
             // TODO: this will only work for errors in the stdlib or Diem Framework. We should
             // add code to build an ErrorMapping for modules in move_lib as well
             let error_descriptions: ErrorMapping =
-                bcs::from_bytes(diem_framework_releases::current_error_descriptions())?;
+                bcs::from_bytes(framework_releases::current_error_descriptions())?;
             print!(
                 "Execution aborted with code {} in module {}.",
                 abort_code, id

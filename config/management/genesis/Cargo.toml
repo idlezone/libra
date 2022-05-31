@@ -23,14 +23,14 @@ executor = { path = "../../../execution/executor" }
 generate-key = { path = "../../generate-key" }
 bcs = "0.1.2"
 diem-config = { path = "../.."}
-diem-crypto = { path = "../../../crypto/crypto" }
+diem-crypto = { path = "../../../crates/diem-crypto" }
 diem-global-constants = { path = "../../global-constants" }
 diem-management = { path = ".." }
 diem-network-address-encryption = {path = "../network-address-encryption"}
 diem-secure-storage = { path = "../../../secure/storage" }
 diem-types = { path = "../../../types" }
-diem-workspace-hack = { path = "../../../common/workspace-hack" }
-diem-temppath = { path = "../../../common/temppath" }
+diem-workspace-hack = { path = "../../../crates/diem-workspace-hack" }
+diem-temppath = { path = "../../../crates/diem-temppath" }
 diem-vm = { path = "../../../language/diem-vm" }
 diemdb = { path = "../../../storage/diemdb" }
 storage-interface = { path = "../../../storage/storage-interface" }

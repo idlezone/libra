@@ -5,7 +5,7 @@
 
 use crate::account::Account;
 use compiler::Compiler;
-use diem_framework_releases::legacy::transaction_scripts::LegacyStdlibScript;
+use framework_releases::legacy::transaction_scripts::LegacyStdlibScript;
 use diem_types::{
     account_config,
     transaction::{RawTransaction, Script, SignedTransaction, TransactionArgument},

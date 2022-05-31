@@ -1,5 +1,5 @@
 [package]
-name = "diem-framework-releases"
+name = "framework-releases"
 version = "0.1.0"
 edition = "2018"
 authors = ["Diem Association <opensource@diem.com>"]
@@ -11,9 +11,9 @@ publish = false
 
 
 [dependencies]
-diem-crypto = { path = "../../../crypto/crypto" }
+diem-crypto = { path = "../../../crates/diem-crypto" }
 diem-types = { path = "../../../types" }
-diem-workspace-hack = { path = "../../../common/workspace-hack" }
+diem-workspace-hack = { path = "../../../crates/diem-workspace-hack" }
 move-binary-format = { path = "../../move-binary-format" }
 
 bytecode-verifier = {path = "../../bytecode-verifier" }

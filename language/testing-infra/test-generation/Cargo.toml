@@ -21,9 +21,9 @@ crossbeam-channel = "0.5.0"
 
 bytecode-verifier = { path = "../../bytecode-verifier" }
 diem-config = { path = "../../../config" }
-diem-logger = { path = "../../../common/logger" }
+diem-logger = { path = "../../../crates/diem-logger" }
 diem-state-view = { path = "../../../storage/state-view" }
-diem-workspace-hack = { path = "../../../common/workspace-hack" }
+diem-workspace-hack = { path = "../../../crates/diem-workspace-hack" }
 move-core-types = { path = "../../move-core/types" }
 move-vm-runtime = { path = "../../move-vm/runtime" }
 move-vm-types = { path = "../../move-vm/types" }

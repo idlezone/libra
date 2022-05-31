@@ -5,7 +5,7 @@
 
 use anyhow::Result;
 use diem_config::config::RocksdbConfig;
-use diem_framework_releases::name_for_script;
+use framework_releases::name_for_script;
 use diem_logger::info;
 use diemdb::DiemDB;
 use std::path::PathBuf;

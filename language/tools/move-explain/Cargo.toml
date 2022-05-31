@@ -11,8 +11,8 @@ edition = "2018"
 
 [dependencies]
 structopt = "0.3.21"
-diem-framework-releases = { path = "../../diem-framework/releases" }
-diem-workspace-hack = { path = "../../../common/workspace-hack" }
+framework-releases = { path = "../../diem-framework/releases" }
+diem-workspace-hack = { path = "../../../crates/diem-workspace-hack" }
 move-core-types = { path = "../../move-core/types" }
 bcs = "0.1.2"
 

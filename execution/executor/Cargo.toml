@@ -20,16 +20,16 @@ serde = { version = "1.0.124", features = ["derive"] }
 consensus-types = { path = "../../consensus/consensus-types"}
 executor-types = { path = "../executor-types" }
 bcs = "0.1.2"
-diem-crypto = { path = "../../crypto/crypto" }
-diem-logger = { path = "../../common/logger" }
-diem-metrics = { path = "../../common/metrics" }
-diem-infallible = { path = "../../common/infallible" }
+diem-crypto = { path = "../../crates/diem-crypto" }
+diem-logger = { path = "../../crates/diem-logger" }
+diem-metrics = { path = "../../crates/diem-metrics" }
+diem-infallible = { path = "../../crates/diem-infallible" }
 diem-secure-net = { path = "../../secure/net" }
 diem-state-view = { path = "../../storage/state-view" }
 diem-types = { path = "../../types" }
 move-core-types = { path = "../../language/move-core/types" }
 diem-vm = { path = "../../language/diem-vm" }
-diem-workspace-hack = { path = "../../common/workspace-hack" }
+diem-workspace-hack = { path = "../../crates/diem-workspace-hack" }
 scratchpad = { path = "../../storage/scratchpad" }
 storage-interface = { path = "../../storage/storage-interface" }
 
@@ -39,12 +39,12 @@ proptest = { version = "1.0.0", optional = true }
 proptest = "1.0.0"
 rand = "0.8.3"
 
-diem-framework-releases = { path = "../../language/diem-framework/releases" }
+framework-releases = { path = "../../language/diem-framework/releases" }
 compiler = { path = "../../language/compiler" }
 executor-test-helpers = { path = "../executor-test-helpers" }
 diem-config = { path = "../../config" }
 diem-genesis-tool = {path = "../../config/management/genesis", features = ["testing"] }
-diem-temppath = { path = "../../common/temppath" }
+diem-temppath = { path = "../../crates/diem-temppath" }
 diemdb = { path = "../../storage/diemdb" }
 storage-interface = { path = "../../storage/storage-interface", features=["fuzzing"] }
 diem-transaction-builder = { path = "../../sdk/transaction-builder" }

@@ -17,7 +17,7 @@ use crate::{
     UNFREEZE_ACCOUNT_BYTES, UPDATE_DIEM_VERSION_BYTES, UPDATE_DUAL_ATTESTATION_LIMIT_BYTES,
     UPDATE_EXCHANGE_RATE_BYTES, UPDATE_MINTING_ABILITY_BYTES,
 };
-use diem_framework_releases::legacy::transaction_scripts::*;
+use framework_releases::legacy::transaction_scripts::*;
 
 #[test]
 fn test_byte_patterns() {

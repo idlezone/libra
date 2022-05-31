@@ -103,7 +103,7 @@ impl Compiler {
         if self.skip_stdlib_deps {
             extra_deps
         } else {
-            let mut deps: Vec<CompiledModule> = diem_framework_releases::current_modules().to_vec();
+            let mut deps: Vec<CompiledModule> = framework_releases::current_modules().to_vec();
             deps.extend(extra_deps);
             deps
         }

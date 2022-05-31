@@ -118,7 +118,7 @@ fn validator_add() {
 #[test]
 fn validator_add_max_number() {
     let mut executor = FakeExecutor::custom_genesis(
-        diem_framework_releases::current_module_blobs(),
+        framework_releases::current_module_blobs(),
         Some(256),
         VMPublishingOption::open(),
     );

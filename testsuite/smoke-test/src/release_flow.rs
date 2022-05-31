@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::test_utils::{diem_swarm_utils::get_json_rpc_url, setup_swarm_and_client_proxy};
-use diem_framework_releases::current_modules_with_blobs;
+use framework_releases::current_modules_with_blobs;
 use diem_types::{
     chain_id::ChainId, on_chain_config::DIEM_MAX_KNOWN_VERSION, transaction::TransactionPayload,
 };

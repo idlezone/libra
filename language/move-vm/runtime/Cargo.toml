@@ -18,9 +18,9 @@ once_cell = "1.7.2"
 parking_lot = "0.11.1"
 
 bytecode-verifier = { path = "../../bytecode-verifier" }
-diem-crypto = { path = "../../../crypto/crypto" }
-diem-logger = { path = "../../../common/logger" }
-diem-workspace-hack = { path = "../../../common/workspace-hack" }
+diem-crypto = { path = "../../../crates/diem-crypto" }
+diem-logger = { path = "../../../crates/diem-logger" }
+diem-workspace-hack = { path = "../../../crates/diem-workspace-hack" }
 move-core-types = { path = "../../move-core/types" }
 move-vm-natives = { path = "../natives" }
 move-vm-types = { path = "../types" }

@@ -845,7 +845,7 @@ pub fn eval<TComp: Compiler>(
         }
     } else {
         let module_blobs = if compiler.use_compiled_genesis() {
-            diem_framework_releases::current_module_blobs()
+            framework_releases::current_module_blobs()
         } else {
             diem_framework::module_blobs()
         };

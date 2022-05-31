@@ -128,7 +128,7 @@ fn main() {
         } else if args.no_stdlib {
             vec![]
         } else {
-            diem_framework_releases::current_modules().to_vec()
+            framework_releases::current_modules().to_vec()
         }
     };
 

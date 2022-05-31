@@ -69,6 +69,10 @@ use diem_logger::prelude::*;
 use once_cell::sync::Lazy;
 use prometheus::proto::MetricType;
 use std::collections::HashMap;
+use std::{path::Path, thread, time, io::Write};
+use std::fs::{create_dir_all, File, OpenOptions};
+use prometheus::{Encoder, TextEncoder};
+use anyhow::Error;
 
 pub static NUM_METRICS: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
@@ -167,4 +171,43 @@ macro_rules! monitor {
         gauge.dec();
         result
     }};
+}
+
+fn get_metrics_file<P: AsRef<Path>>(dir_path: &P, file_name: &str) -> File {
+    create_dir_all(dir_path).expect("Create metrics dir failed");
+
+    let metrics_file_path = dir_path.as_ref().join(file_name);
+
+    info!("Using metrics file {}", metrics_file_path.display());
+
+    OpenOptions::new()
+        .append(true)
+        .create(true)
+        .open(metrics_file_path)
+        .expect("Open metrics file failed")
+}
+
+fn get_all_metrics_as_serialized_string() -> Result<Vec<u8>, Error> {
+    let all_metrics = gather_metrics();
+
+    let encoder = TextEncoder::new();
+    let mut buffer = Vec::new();
+    encoder.encode(&all_metrics, &mut buffer)?;
+    Ok(buffer)
+}
+
+pub fn dump_all_metrics_to_file_periodically<P: AsRef<Path>>(
+    dir_path: &P,
+    file_name: &str,
+    interval: u64,
+) {
+    let mut file = get_metrics_file(dir_path, file_name);
+    thread::spawn(move || loop {
+        let mut buffer = get_all_metrics_as_serialized_string().expect("Error gathering metrics");
+        if !buffer.is_empty() {
+            buffer.push(b'\n');
+            file.write_all(&buffer).expect("Error writing metrics");
+        }
+        thread::sleep(time::Duration::from_millis(interval));
+    });
 }

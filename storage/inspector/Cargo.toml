@@ -13,11 +13,11 @@ anyhow = "1.0.38"
 structopt = "0.3.21"
 tempfile = "3.2.0"
 
-diem-framework-releases = { path = "../../language/diem-framework/releases" }
+framework-releases = { path = "../../language/diem-framework/releases" }
 diemdb = { path = "../diemdb" }
 diem-config = { path = "../../config" }
-diem-crypto = { path = "../../crypto/crypto" }
+diem-crypto = { path = "../../crates/diem-crypto" }
 diem-types = { path = "../../types" }
-diem-logger = { path = "../../common/logger" }
-diem-workspace-hack = { path = "../../common/workspace-hack" }
+diem-logger = { path = "../../crates/diem-logger" }
+diem-workspace-hack = { path = "../../crates/diem-workspace-hack" }
 storage-interface = { path = "../storage-interface" }

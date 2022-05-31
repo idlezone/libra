@@ -18,7 +18,7 @@ use crate::{
     keygen::KeyGen,
 };
 use diem_crypto::HashValue;
-use diem_framework_releases::{
+use framework_releases::{
     current_module_blobs, current_modules, legacy::transaction_scripts::LegacyStdlibScript,
 };
 use diem_state_view::StateView;

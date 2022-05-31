@@ -19,9 +19,9 @@ structopt = "0.3.21"
 
 bcs = "0.1.2"
 bytecode-verifier = { path = "../../bytecode-verifier" }
-diem-framework-releases = { path = "../../diem-framework/releases" }
+framework-releases = { path = "../../diem-framework/releases" }
 disassembler = { path = "../disassembler" }
-diem-workspace-hack = { path = "../../../common/workspace-hack" }
+diem-workspace-hack = { path = "../../../crates/diem-workspace-hack" }
 diem-types = { path = "../../../types" }
 move-coverage = { path = "../move-coverage" }
 move-core-types = { path = "../../move-core/types" }

@@ -61,4 +61,4 @@ address = "0.0.0.0"
 
 # Query
 
-There is a module NodeDebugClient in common/debug-interface/src/lib.rs, which allows for programmatically consuming node data. This is a thin wrapper making http requests to the above API.
+There is a module NodeDebugClient in crates/debug-interface/src/lib.rs, which allows for programmatically consuming node data. This is a thin wrapper making http requests to the above API.

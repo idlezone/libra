@@ -12,10 +12,10 @@ edition = "2018"
 [dependencies]
 bcs = "0.1.2"
 diem-types = { path = "../../../types" }
-diem-workspace-hack = { path = "../../../common/workspace-hack" }
+diem-workspace-hack = { path = "../../../crates/diem-workspace-hack" }
 move-binary-format = { path = "../../move-binary-format" }
 resource-viewer = { path = "../resource-viewer"}
 vm-genesis = { path = "../vm-genesis" }
-diem-framework-releases = { path = "../../diem-framework/releases" }
+framework-releases = { path = "../../diem-framework/releases" }
 
 structopt = "0.3.21"

@@ -1,7 +1,7 @@
 // Copyright (c) The Diem Core Contributors
 // SPDX-License-Identifier: Apache-2.0
 
-use diem_framework_releases::legacy::transaction_scripts::LegacyStdlibScript;
+use framework_releases::legacy::transaction_scripts::LegacyStdlibScript;
 use diem_transaction_builder::stdlib::encode_update_dual_attestation_limit_script;
 use diem_types::{
     account_config::CORE_CODE_ADDRESS,
